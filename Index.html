@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Rose Day ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-top: 60px;
+      color: #b30059;
+      font-size: 3em;
+    }
+
+    p {
+      font-size: 1.4em;
+      color: #4d0026;
+      margin: 20px;
+    }
+
+    .rose {
+      font-size: 3em;
+      animation: float 4s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    .button {
+      margin-top: 40px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+
+    .button:hover {
+      background: #e6004c;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .final-message {
+      margin-top: 50px;
+      font-size: 1.6em;
+      color: #660033;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .hearts {
+      position: fixed;
+      bottom: -50px;
+      animation: rise 6s infinite;
+      font-size: 2em;
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-800px); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌹 Happy Rose Day 🌹</h1>
+
+  <div class="rose">🌹🌹🌹</div>
+
+  <p>
+    Just like this rose,<br>
+    you make my world beautiful, colorful, and full of love 💕
+  </p>
+
+  <button class="button" onclick="showSurprise()">Click for Surprise 💖</button>
+
+  <div id="surprise" class="hidden final-message">
+    💌 Happy Rose Day my jaan Basit ❤️<br><br>
+    From your sooo much lovely & handsome hubby<br>
+    <strong>Darshan 😘</strong>
+  </div>
+
+  <!-- Background Music (YouTube Embed) -->
+  <iframe id="music" width="0" height="0"
+    src=""
+    frameborder="0"
+    allow="autoplay">
+  </iframe>
+
+  <script>
+    function showSurprise() {
+      document.getElementById("surprise").classList.remove("hidden");
+
+      // Play Love Me Like You Do
+      document.getElementById("music").src =
+        "https://www.youtube.com/embed/AJtDXIazrMo?autoplay=1&loop=1&playlist=AJtDXIazrMo";
+
+      createHearts();
+    }
+
+    function createHearts() {
+      for (let i = 0; i < 25; i++) {
+        let heart = document.createElement("div");
+        heart.className = "hearts";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 6000);
+      }
+    }
+  </script>
+
+</body>
+</html>
